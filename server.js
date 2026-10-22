@@ -6,9 +6,7 @@ const CLIENT_SECRET = process.env.DISCORD_SECRET;
 const REDIRECT      = process.env.REDIRECT;
 
 // discordId -> expiry shown in the menu (add your buyers here)
-const subs = {
-  "123456789012345678": "11/20",
-};
+const subs = JSON.parse(process.env.SUBS || '{}');
 const lookupExpiry = id => subs[id] || "N/A";
 
 const pending = new Map(); // state -> user data
